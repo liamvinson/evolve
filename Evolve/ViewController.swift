@@ -32,14 +32,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     
-    
+    // Shape Type Picker
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
     let myPickerData = [String](arrayLiteral: "Polygons", "Rectangles", "Circles")
     
-    // Shape Type Picker
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
