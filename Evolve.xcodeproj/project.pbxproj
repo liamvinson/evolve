@@ -69,20 +69,36 @@
 			isa = PBXGroup;
 			children = (
 				312A2EF5224E7BA100C7B9CD /* AppDelegate.swift */,
-				312A2EF7224E7BA100C7B9CD /* ViewController.swift */,
-				3147516D2253EEF800C013A5 /* SettingsViewController.swift */,
-				3147516F2253EF1200C013A5 /* HelpViewController.swift */,
-				312A2F07224E7D1A00C7B9CD /* EvolveViewController.swift */,
-				31D3FEF42254C20D0052C212 /* Evolve.swift */,
-				3143477C22554A740049769C /* Tools.swift */,
+				3143478222554B590049769C /* View Controllers */,
+				3143478322554B8F0049769C /* Evolve Model */,
 				312A2EF9224E7BA100C7B9CD /* Main.storyboard */,
 				312A2EFC224E7BA300C7B9CD /* Assets.xcassets */,
 				312A2EFE224E7BA300C7B9CD /* LaunchScreen.storyboard */,
 				312A2F01224E7BA300C7B9CD /* Info.plist */,
+			);
+			path = Evolve;
+			sourceTree = "<group>";
+		};
+		3143478222554B590049769C /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				312A2EF7224E7BA100C7B9CD /* ViewController.swift */,
+				3147516D2253EEF800C013A5 /* SettingsViewController.swift */,
+				3147516F2253EF1200C013A5 /* HelpViewController.swift */,
+				312A2F07224E7D1A00C7B9CD /* EvolveViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		3143478322554B8F0049769C /* Evolve Model */ = {
+			isa = PBXGroup;
+			children = (
+				31D3FEF42254C20D0052C212 /* Evolve.swift */,
+				3143477C22554A740049769C /* Tools.swift */,
 				3143477E22554AE50049769C /* DNA.swift */,
 				3143478022554AF00049769C /* Shapes.swift */,
 			);
-			path = Evolve;
+			path = "Evolve Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
