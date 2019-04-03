@@ -13,6 +13,7 @@
 		312A2EFD224E7BA300C7B9CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 312A2EFC224E7BA300C7B9CD /* Assets.xcassets */; };
 		312A2F00224E7BA300C7B9CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 312A2EFE224E7BA300C7B9CD /* LaunchScreen.storyboard */; };
 		312A2F08224E7D1A00C7B9CD /* EvolveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312A2F07224E7D1A00C7B9CD /* EvolveViewController.swift */; };
+		3143477D22554A740049769C /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3143477C22554A740049769C /* Tools.swift */; };
 		3147516E2253EEF800C013A5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3147516D2253EEF800C013A5 /* SettingsViewController.swift */; };
 		314751702253EF1200C013A5 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3147516F2253EF1200C013A5 /* HelpViewController.swift */; };
 		31D3FEF52254C20D0052C212 /* Evolve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D3FEF42254C20D0052C212 /* Evolve.swift */; };
@@ -27,6 +28,7 @@
 		312A2EFF224E7BA300C7B9CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		312A2F01224E7BA300C7B9CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		312A2F07224E7D1A00C7B9CD /* EvolveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolveViewController.swift; sourceTree = "<group>"; };
+		3143477C22554A740049769C /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		3147516D2253EEF800C013A5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3147516F2253EF1200C013A5 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		31D3FEF42254C20D0052C212 /* Evolve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Evolve.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				3147516F2253EF1200C013A5 /* HelpViewController.swift */,
 				312A2F07224E7D1A00C7B9CD /* EvolveViewController.swift */,
 				31D3FEF42254C20D0052C212 /* Evolve.swift */,
+				3143477C22554A740049769C /* Tools.swift */,
 				312A2EF9224E7BA100C7B9CD /* Main.storyboard */,
 				312A2EFC224E7BA300C7B9CD /* Assets.xcassets */,
 				312A2EFE224E7BA300C7B9CD /* LaunchScreen.storyboard */,
@@ -151,6 +154,7 @@
 				314751702253EF1200C013A5 /* HelpViewController.swift in Sources */,
 				312A2EF6224E7BA100C7B9CD /* AppDelegate.swift in Sources */,
 				3147516E2253EEF800C013A5 /* SettingsViewController.swift in Sources */,
+				3143477D22554A740049769C /* Tools.swift in Sources */,
 				31D3FEF52254C20D0052C212 /* Evolve.swift in Sources */,
 				312A2F08224E7D1A00C7B9CD /* EvolveViewController.swift in Sources */,
 			);

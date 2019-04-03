@@ -8,9 +8,9 @@
 
 import UIKit
 
-struct Settings {
-    let shapeType: ShapeType = .polygon
-    let shapeCount: Int = 1
+struct Settings { // Contains default values
+    let shapeType: ShapeType = .rectangle
+    let shapeCount: Int = 10
     let shapeLimit: Int = 100
     let pointLimit: Int = 5
     let imageSize: Int = 200

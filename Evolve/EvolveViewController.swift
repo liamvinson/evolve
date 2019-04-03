@@ -61,18 +61,6 @@ class EvolveViewController: UIViewController, ModelDelegate {
     
     
 //
-//
-//    func generatePolygons() -> [Polygon] {
-//        var polygons: [Polygon] = []
-//        for _ in 0 ..< startPolygon {
-//            let points = Int.random(in: 3...pointLimit)
-//            polygons.append(Polygon(points: generatePoints(Amount: points, xLimit: imageSize, yLimit: imageSize), color: randomColor()))
-//        }
-//        return polygons
-//    }
-//
-//
-//
 //    func mutate(shapes: [Polygon], imageData: [Int]) {
 //        DispatchQueue.global().async {
 //
@@ -146,81 +134,8 @@ class EvolveViewController: UIViewController, ModelDelegate {
 //            }
 //        }
 //    }
-//
-//    func fitness2(image: UIImage, data: [Int], width: Int, height: Int) -> Int {
-//
-//        var pixelFitness: Int = 0
-//        var red: Int
-//        var green: Int
-//        var blue: Int
-//
-//        let providerData = image.cgImage!.dataProvider!.data
-//        let imageData = CFDataGetBytePtr(providerData)!
-//
-//        let x = width * height * 4
-//        for i in stride(from: 0, to: x, by: 4) {
-//
-//            red = Int(imageData[i]) - data[i]
-//            green = Int(imageData[i + 1]) - data[i + 1]
-//            blue = Int(imageData[i + 2]) - data[i + 2]
-//
-//            pixelFitness += red*red + green*green + blue*blue
-//
-//        }
-//
-//        return pixelFitness
-//
-//    }
-//
-//    func getPixelData(image:  UIImage, width: Int, height: Int) -> [Int] {
-//
-//        var pixels: [Int] = []
-//
-//        let providerData = image.cgImage!.dataProvider!.data
-//        let data = CFDataGetBytePtr(providerData)!
-//
-//        let x = width * height * 4
-//        for i in stride(from: 0, to: x, by: 4) {
-//
-//            let r = Int(data[i])
-//            let g = Int(data[i+1])
-//            let b = Int(data[i+2])
-//            let a = Int(data[i+3])
-//
-//            pixels.append(r)
-//            pixels.append(g)
-//            pixels.append(b)
-//            pixels.append(a)
-//        }
-//
-//        return pixels
-//    }
-//
-//    func drawImage(shapes: [Polygon], size: Int) -> UIImage {
-//
-//        let format = UIGraphicsImageRendererFormat()
-//        format.scale = 1
-//        let renderer = UIGraphicsImageRenderer(size: CGSize(width: size, height: size), format: format)
-//        let renderedImage = renderer.image { ctx in
-//
-//            // Black background
-//            ctx.cgContext.setFillColor(UIColor.black.cgColor)
-//            ctx.cgContext.addRect(CGRect(x: 0, y: 0, width: size, height: size))
-//            ctx.cgContext.fillPath()
-//
-//            // Draw shapes
-//            for i in shapes {
-//                ctx.cgContext.addLines(between: i.points)
-//                ctx.cgContext.setFillColor(i.color.cgColor)
-//                ctx.cgContext.fillPath()
-//            }
-//        }
-//        return renderedImage
-//    }
-//
-//    func createPolygon(pointLimit: Int, xLimit: Int, yLimit: Int) -> Polygon {
-//        return Polygon(points: generatePoints(Amount: pointLimit, xLimit: xLimit, yLimit: yLimit), color: randomColor())
-//    }
+
+
 //
 //    func movePoint(point: CGPoint) -> CGPoint {
 //
@@ -246,13 +161,7 @@ class EvolveViewController: UIViewController, ModelDelegate {
 //            return rnd
 //        }
 //    }
-//
-//    func randomCGPoint(xLimit: Int, yLimit: Int) -> CGPoint {
-//        let randomX = Int.random(in: 0...xLimit)
-//        let randomY = Int.random(in: 0...yLimit)
-//        return CGPoint(x: randomX, y: randomY)
-//    }
-//
+////
 //    func probability(chance: Double) -> Bool {
 //        let x = Double.random(in: 0...1)
 //        if x < chance {
@@ -261,17 +170,7 @@ class EvolveViewController: UIViewController, ModelDelegate {
 //        return false
 //    }
 //
-//    func generatePoints(Amount: Int, xLimit: Int, yLimit: Int) -> [CGPoint] {
-//        var points: [CGPoint] = []
-//        for _ in 0..<Amount {
-//            points.append(randomCGPoint(xLimit: imageSize, yLimit: imageSize))
-//        }
-//        return points
-//    }
-//
-//    func randomColor() -> UIColor {
-//        return UIColor(red: .random(in: 0...1), green: .random(in: 0...1), blue: .random(in: 0...1), alpha: .random(in: 0...1))
-//    }
+
 //
 //    func similarColor(original: UIColor) -> UIColor {
 //        let x = original.cgColor.components!
