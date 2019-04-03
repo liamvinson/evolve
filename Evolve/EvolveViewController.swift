@@ -35,14 +35,15 @@ class EvolveViewController: UIViewController, ModelDelegate {
     // Settings
     let startPolygon = 30
     let polygonLimit = 200
-    let pointLimit = 4
-    let imageSize = 200
     let colorDeviation = 0.1
     let pointDeviation = 30
     
     let shapeType = ShapeType.rectangle
     let shapeCount = 30
     let image = UIImage(named: "mona")!
+    let imageSize = 200
+    let pointLimit = 4
+    
     
     var generator: Evolve?
     
@@ -50,7 +51,8 @@ class EvolveViewController: UIViewController, ModelDelegate {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        generator = Evolve(shapeType: shapeType, shapeCount: shapeCount, imageSize: imageSize, image: image)
+        let settings = Settings()
+        generator = Evolve(settings: settings, image: image)
         generator!.delegate = self
         generator?.start()
     }

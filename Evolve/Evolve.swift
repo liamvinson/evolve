@@ -14,20 +14,26 @@ protocol Shape {
     func mutate()
 }
 
+enum ShapeType: String, CaseIterable {
+    case polygon = "Polygons"
+    case rectangle = "Rectangles"
+    case circle = "Circles"
+}
+
 struct DNA {
     var shapes: [Shape] = []
     
-    init(shapeType: ShapeType, shapeCount: Int, imageSize: Int) {
-        generateShapes(shapeType: shapeType, shapeCount: shapeCount, imageSize: imageSize)
+    init(settings: Settings) {
+        generateShapes(settings: settings)
     }
     
-    mutating func generateShapes(shapeType: ShapeType, shapeCount: Int, imageSize: Int) {
-        for _ in 0 ..< shapeCount {
-            switch shapeType {
+    mutating func generateShapes(settings: Settings) {
+        for _ in 0 ..< settings.shapeCount {
+            switch settings.shapeType {
             case .polygon:
-                shapes.append(Polygon(imageSize: imageSize))
+                shapes.append(Polygon(settings: settings))
             case .rectangle:
-                shapes.append(Rectangle(imageSize: imageSize))
+                shapes.append(Rectangle(settings: settings))
             case .circle:
                 break
                 //                shape.append(Rectangle())
@@ -46,8 +52,8 @@ struct Polygon: Shape {
     let points: [CGPoint]
     let color: UIColor
     
-    init(imageSize: Int) {
-        points = Tools.randomPolygon()
+    init(settings: Settings) {
+        points = Tools.randomPolygon(pointLimit: settings.pointLimit, imageSize: settings.imageSize)
         color = Tools.randomColor()
     }
     
@@ -60,8 +66,8 @@ struct Rectangle: Shape {
     let rect: CGRect
     let color: UIColor
     
-    init(imageSize: Int) {
-        rect = Tools.randomRectangle(imageSize: imageSize)
+    init(settings: Settings) {
+        rect = Tools.randomRectangle(imageSize: settings.imageSize)
         color = Tools.randomColor()
     }
     
@@ -70,12 +76,21 @@ struct Rectangle: Shape {
     }
 }
 
-
 class Tools {
     
-    static func randomPolygon() -> [CGPoint] {
-        let x: [CGPoint] = []
-        return x
+    static func randomPolygon(pointLimit: Int, imageSize: Int) -> [CGPoint] {
+        var points: [CGPoint] = []
+        let number = Int.random(in: 3 ... pointLimit)
+        for _ in 0 ..< number {
+            points.append(randomPoint(limit: imageSize))
+        }
+        return points
+    }
+    
+    static func randomPoint(limit: Int) -> CGPoint {
+        let x = Int.random(in: 0...limit)
+        let y = Int.random(in: 0...limit)
+        return CGPoint(x: x, y: y)
     }
     
     static func randomRectangle(imageSize: Int) -> CGRect {
@@ -176,9 +191,7 @@ class Tools {
     }
 }
 
-enum ShapeType {
-    case polygon, rectangle, circle
-}
+
 
 
 
@@ -197,17 +210,14 @@ class Evolve {
         delegate?.didRecieveData(image)
     }
     
-    let shapeType: ShapeType
-    let imageSize: Int
-    let imageData: [Int]
-    
+    var imageData: [Int]
+    var settings: Settings
     var dna: DNA
     
-    init(shapeType: ShapeType, shapeCount: Int, imageSize: Int, image: UIImage) {
-        self.shapeType = shapeType
-        self.imageSize = imageSize
-        self.imageData = Tools.getPixelData(image: image, width: imageSize, height: imageSize)
-        dna = DNA(shapeType: shapeType, shapeCount: shapeCount, imageSize: imageSize)
+    init(settings: Settings, image: UIImage) {
+        self.settings = settings
+        self.imageData = Tools.getPixelData(image: image, width: settings.imageSize, height: settings.imageSize)
+        dna = DNA(settings: settings)
     }
     
     
@@ -221,10 +231,10 @@ class Evolve {
                 //                dnaCopy.mutate()
                 
                 // Draw
-                let renderedImage = Tools.drawImage(shapes: self.dna.shapes, shapeType: self.shapeType, imageSize: self.imageSize)
+                let renderedImage = Tools.drawImage(shapes: self.dna.shapes, shapeType: self.settings.shapeType, imageSize: self.settings.imageSize)
                 
                 // Find fitness
-                let fitness = Tools.fitness(renderedImage: renderedImage, imageData: self.imageData, imageSize: self.imageSize)
+                let fitness = Tools.fitness(renderedImage: renderedImage, imageData: self.imageData, imageSize: self.settings.imageSize)
                 
                 //Do more
                 DispatchQueue.main.async {

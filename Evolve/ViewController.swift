@@ -37,22 +37,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.view.endEditing(true)
     }
     
-    let myPickerData = [String](arrayLiteral: "Polygons", "Rectangles", "Circles")
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView( _ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return myPickerData.count
+        return ShapeType.allCases.count
     }
     
     func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return myPickerData[row]
+        return ShapeType.allCases[row].rawValue
     }
 
     func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        shapeTypeInput.text = myPickerData[row]
+        shapeTypeInput.text = ShapeType.allCases[row].rawValue
     }
     
     

@@ -8,6 +8,17 @@
 
 import UIKit
 
+struct Settings {
+    let shapeType: ShapeType = .polygon
+    let shapeCount: Int = 1
+    let shapeLimit: Int = 100
+    let pointLimit: Int = 5
+    let imageSize: Int = 200
+    
+    let colorDeviation: Double = 0.1
+    let pointDeviation: Int = 30
+}
+
 class SettingsViewController: UIViewController {
 
     override func viewDidLoad() {
