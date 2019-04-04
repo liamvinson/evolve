@@ -50,7 +50,7 @@ class EvolveViewController: UIViewController, ModelDelegate {
     
     let shapeType = ShapeType.rectangle
     let shapeCount = 30
-    let image = UIImage(named: "mona")!
+    let image = UIImage(named: "test")!
     let imageSize = 200
     let pointLimit = 4
     

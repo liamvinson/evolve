@@ -16,6 +16,10 @@
 		3143477D22554A740049769C /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3143477C22554A740049769C /* Tools.swift */; };
 		3143477F22554AE50049769C /* DNA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3143477E22554AE50049769C /* DNA.swift */; };
 		3143478122554AF00049769C /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3143478022554AF00049769C /* Shapes.swift */; };
+		3143478D22563DA50049769C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3143478C22563DA50049769C /* AppDelegate.swift */; };
+		3143478F22563DA50049769C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3143478E22563DA50049769C /* ViewController.swift */; };
+		3143479122563DA80049769C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3143479022563DA80049769C /* Assets.xcassets */; };
+		3143479422563DA80049769C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3143479222563DA80049769C /* Main.storyboard */; };
 		3147516E2253EEF800C013A5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3147516D2253EEF800C013A5 /* SettingsViewController.swift */; };
 		314751702253EF1200C013A5 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3147516F2253EF1200C013A5 /* HelpViewController.swift */; };
 		31D3FEF52254C20D0052C212 /* Evolve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D3FEF42254C20D0052C212 /* Evolve.swift */; };
@@ -33,6 +37,13 @@
 		3143477C22554A740049769C /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		3143477E22554AE50049769C /* DNA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNA.swift; sourceTree = "<group>"; };
 		3143478022554AF00049769C /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
+		3143478A22563DA50049769C /* MacEvolve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacEvolve.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3143478C22563DA50049769C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3143478E22563DA50049769C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3143479022563DA80049769C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3143479322563DA80049769C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3143479522563DA80049769C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3143479622563DA80049769C /* MacEvolve.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacEvolve.entitlements; sourceTree = "<group>"; };
 		3147516D2253EEF800C013A5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3147516F2253EF1200C013A5 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		31D3FEF42254C20D0052C212 /* Evolve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Evolve.swift; sourceTree = "<group>"; };
@@ -46,13 +57,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3143478722563DA50049769C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		312A2EE9224E7BA100C7B9CD = {
 			isa = PBXGroup;
 			children = (
+				3143478322554B8F0049769C /* Evolve Model */,
 				312A2EF4224E7BA100C7B9CD /* Evolve */,
+				3143478B22563DA50049769C /* MacEvolve */,
 				312A2EF3224E7BA100C7B9CD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				312A2EF2224E7BA100C7B9CD /* Evolve.app */,
+				3143478A22563DA50049769C /* MacEvolve.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,7 +91,6 @@
 			children = (
 				312A2EF5224E7BA100C7B9CD /* AppDelegate.swift */,
 				3143478222554B590049769C /* View Controllers */,
-				3143478322554B8F0049769C /* Evolve Model */,
 				312A2EF9224E7BA100C7B9CD /* Main.storyboard */,
 				312A2EFC224E7BA300C7B9CD /* Assets.xcassets */,
 				312A2EFE224E7BA300C7B9CD /* LaunchScreen.storyboard */,
@@ -101,6 +121,19 @@
 			path = "Evolve Model";
 			sourceTree = "<group>";
 		};
+		3143478B22563DA50049769C /* MacEvolve */ = {
+			isa = PBXGroup;
+			children = (
+				3143478C22563DA50049769C /* AppDelegate.swift */,
+				3143478E22563DA50049769C /* ViewController.swift */,
+				3143479022563DA80049769C /* Assets.xcassets */,
+				3143479222563DA80049769C /* Main.storyboard */,
+				3143479522563DA80049769C /* Info.plist */,
+				3143479622563DA80049769C /* MacEvolve.entitlements */,
+			);
+			path = MacEvolve;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -121,6 +154,23 @@
 			productReference = 312A2EF2224E7BA100C7B9CD /* Evolve.app */;
 			productType = "com.apple.product-type.application";
 		};
+		3143478922563DA50049769C /* MacEvolve */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3143479722563DA80049769C /* Build configuration list for PBXNativeTarget "MacEvolve" */;
+			buildPhases = (
+				3143478622563DA50049769C /* Sources */,
+				3143478722563DA50049769C /* Frameworks */,
+				3143478822563DA50049769C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MacEvolve;
+			productName = MacEvolve;
+			productReference = 3143478A22563DA50049769C /* MacEvolve.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -132,6 +182,9 @@
 				ORGANIZATIONNAME = "Liam Vinson";
 				TargetAttributes = {
 					312A2EF1224E7BA100C7B9CD = {
+						CreatedOnToolsVersion = 10.2;
+					};
+					3143478922563DA50049769C = {
 						CreatedOnToolsVersion = 10.2;
 					};
 				};
@@ -150,6 +203,7 @@
 			projectRoot = "";
 			targets = (
 				312A2EF1224E7BA100C7B9CD /* Evolve */,
+				3143478922563DA50049769C /* MacEvolve */,
 			);
 		};
 /* End PBXProject section */
@@ -162,6 +216,15 @@
 				312A2F00224E7BA300C7B9CD /* LaunchScreen.storyboard in Resources */,
 				312A2EFD224E7BA300C7B9CD /* Assets.xcassets in Resources */,
 				312A2EFB224E7BA100C7B9CD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3143478822563DA50049769C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3143479122563DA80049769C /* Assets.xcassets in Resources */,
+				3143479422563DA80049769C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +247,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3143478622563DA50049769C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3143478F22563DA50049769C /* ViewController.swift in Sources */,
+				3143478D22563DA50049769C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -201,6 +273,14 @@
 				312A2EFF224E7BA300C7B9CD /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		3143479222563DA80049769C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3143479322563DA80049769C /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -358,6 +438,50 @@
 			};
 			name = Release;
 		};
+		3143479822563DA80049769C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MacEvolve/MacEvolve.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = LHZS8DC4DB;
+				INFOPLIST_FILE = MacEvolve/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example..MacEvolve;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		3143479922563DA80049769C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MacEvolve/MacEvolve.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = LHZS8DC4DB;
+				INFOPLIST_FILE = MacEvolve/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example..MacEvolve;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -375,6 +499,15 @@
 			buildConfigurations = (
 				312A2F05224E7BA300C7B9CD /* Debug */,
 				312A2F06224E7BA300C7B9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3143479722563DA80049769C /* Build configuration list for PBXNativeTarget "MacEvolve" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3143479822563DA80049769C /* Debug */,
+				3143479922563DA80049769C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
