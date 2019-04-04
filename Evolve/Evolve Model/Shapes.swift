@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol Shape {
-    func mutate()
+    mutating func mutate()
 }
 
 enum ShapeType: String, CaseIterable {
@@ -20,16 +20,37 @@ enum ShapeType: String, CaseIterable {
 }
 
 struct Polygon: Shape {
-    let points: [CGPoint]
-    let color: UIColor
+    var points: [CGPoint]
+    var color: UIColor
+    let settings: Settings
     
     init(settings: Settings) {
+        self.settings = settings
         points = Tools.randomPolygon(pointLimit: settings.pointLimit, imageSize: settings.imageSize)
         color = Tools.randomColor()
     }
     
-    func mutate() {
-        
+    mutating func mutate() {
+        if Tools.probability(chance: settings.pointChangeProbability) {
+            let rand = Int.random(in: 0..<points.count)
+            points[rand] = Tools.mutatePoint(point: points[rand], imageSize: settings.imageSize, pointDeviation: settings.pointDeviation)
+        }
+
+        //Remove a point
+        if points.count > 3 && Tools.probability(chance: settings.removePointProbability) {
+            let rand = Int.random(in: 0..<points.count)
+            points.remove(at: rand)
+        }
+
+        //Add a point
+        if points.count < settings.pointLimit && Tools.probability(chance: settings.addPointProbability) {
+            points.append(Tools.randomPoint(limit: settings.imageSize))
+        }
+
+        // Change color
+        if Tools.probability(chance: settings.colorChangeProbability) {
+            color = Tools.mutateColor(original: color, colorDeviation: settings.colorDeviation)
+        }
     }
 }
 
@@ -42,7 +63,7 @@ struct Rectangle: Shape {
         color = Tools.randomColor()
     }
     
-    func mutate() {
+    mutating func mutate() {
         
     }
 }

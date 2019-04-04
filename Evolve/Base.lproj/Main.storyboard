@@ -492,6 +492,7 @@ To generate an image make sure you have input an image and then press the genera
                         <viewLayoutGuide key="safeArea" id="RZT-jS-xf0"/>
                     </view>
                     <connections>
+                        <outlet property="outputFitness" destination="lXg-Ab-6pX" id="fVT-NE-WHf"/>
                         <outlet property="outputImage" destination="9cX-LK-8L9" id="Aau-jH-WGF"/>
                         <outlet property="outputIteration" destination="OGS-F9-M2T" id="emz-Mx-CIT"/>
                         <outlet property="outputPolygons" destination="5xb-kq-1Vb" id="u0V-tv-dM4"/>

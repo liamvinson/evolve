@@ -15,12 +15,21 @@ import GameKit
 //}
 
 class EvolveViewController: UIViewController, ModelDelegate {
-    
-    
-    func didRecieveData(_ image: UIImage) {
-        outputImage.image = image
+    func updateFitness(_ fitness: Int) {
+        outputFitness.text = String(fitness)
     }
     
+    func updatePolygons(_ polygons: Int) {
+        outputPolygons.text = String(polygons)
+    }
+    
+    func updateIterations(_ iterations: Int) {
+        outputIteration.text = String(iterations)
+    }
+    
+    func updateImage(_ image: UIImage) {
+        outputImage.image = image
+    }
     
     
     
@@ -28,6 +37,7 @@ class EvolveViewController: UIViewController, ModelDelegate {
     @IBOutlet weak var outputImage: UIImageView!
     @IBOutlet weak var outputPolygons: UILabel!
     @IBOutlet weak var outputIteration: UILabel!
+    @IBOutlet weak var outputFitness: UILabel!
     
     var polygons = 0
     var iteration = 0
@@ -54,7 +64,9 @@ class EvolveViewController: UIViewController, ModelDelegate {
         let settings = Settings()
         generator = Evolve(settings: settings, image: image)
         generator!.delegate = self
-        generator?.start()
+        DispatchQueue.global().async {
+            self.generator?.start()
+        }
     }
     
     
@@ -136,73 +148,7 @@ class EvolveViewController: UIViewController, ModelDelegate {
 //    }
 
 
-//
-//    func movePoint(point: CGPoint) -> CGPoint {
-//
-//        let randomX = myRandom2(in: (0...imageSize), mean: Int(point.x), deviation: pointDeviation)
-//        let randomY = myRandom2(in: (0...imageSize), mean: Int(point.y), deviation: pointDeviation)
-//
-//        return CGPoint(x: randomX, y: randomY)
-//    }
-//
-//    func myRandom2(in range: ClosedRange<Int>, mean: Int, deviation: Int) -> Int {
-//
-//        let randomSource = GKARC4RandomSource()
-//        let randomDistribution = GKGaussianDistribution(randomSource: randomSource, mean: Float(mean), deviation: Float(deviation))
-//
-//        // Clamp the result to within the specified range
-//        let rnd = randomDistribution.nextInt()
-//
-//        if rnd < range.lowerBound {
-//            return range.lowerBound
-//        } else if rnd > range.upperBound {
-//            return range.upperBound
-//        } else {
-//            return rnd
-//        }
-//    }
-////
-//    func probability(chance: Double) -> Bool {
-//        let x = Double.random(in: 0...1)
-//        if x < chance {
-//            return true
-//        }
-//        return false
-//    }
-//
 
-//
-//    func similarColor(original: UIColor) -> UIColor {
-//        let x = original.cgColor.components!
-//
-//        let r = myRandom(mean: Float(x[0]), deviation: Float(colorDeviation), in: (0...1))
-//        let g = myRandom(mean: Float(x[1]), deviation: Float(colorDeviation), in: (0...1))
-//        let b = myRandom(mean: Float(x[2]), deviation: Float(colorDeviation), in: (0...1))
-//        let a = myRandom(mean: Float(x[3]), deviation: Float(colorDeviation), in: (0...1))
-//
-//        return UIColor(red: CGFloat(r), green: CGFloat(g), blue: CGFloat(b), alpha: CGFloat(a))
-//    }
-//
-//    func myRandom(mean: Float, deviation: Float, in range: ClosedRange<Float>) -> Float {
-//        let randomSource = GKRandomSource()
-//
-//        // Checks deviation >= 0
-//
-//        guard deviation > 0 else { return mean }
-//
-//        let x1 = randomSource.nextUniform() // a random number between 0 and 1
-//        let x2 = randomSource.nextUniform() // a random number between 0 and 1
-//        let z1 = sqrt(-2 * log(x1)) * cos(2 * Float.pi * x2) // z1 is normally distributed
-//        let rnd = z1 * deviation + mean
-//
-//        if rnd < range.lowerBound {
-//            return range.lowerBound
-//        } else if rnd > range.upperBound {
-//            return range.upperBound
-//        } else {
-//            return rnd
-//        }
-//    }
     
     
     /*

@@ -9,15 +9,11 @@
 import Foundation
 import UIKit
 
-
-
-
-
-
-
-
 protocol ModelDelegate: class {
-    func didRecieveData(_ image: UIImage)
+    func updateIterations(_ iterations: Int)
+    func updatePolygons(_ polygons: Int)
+    func updateFitness(_ fitness: Int)
+    func updateImage(_ image: UIImage)
 }
 
 
@@ -26,8 +22,31 @@ class Evolve {
     weak var delegate: ModelDelegate?
     
     func outputImage(image: UIImage) {
-        delegate?.didRecieveData(image)
+        DispatchQueue.main.async {
+            self.delegate?.updateImage(image)
+        }
     }
+    
+    func outputIterations(iterations: Int) {
+        DispatchQueue.main.async {
+            self.delegate?.updateIterations(iterations)
+        }
+    }
+    
+    func outputPolygons(polygons: Int) {
+        DispatchQueue.main.async {
+            self.delegate?.updatePolygons(polygons)
+        }
+    }
+    
+    func outputFitness(fitness: Int) {
+        DispatchQueue.main.async {
+            self.delegate?.updateFitness(fitness)
+        }
+    }
+    
+    var iterations = 0
+    var polygons = 0
     
     var imageData: [Int]
     var settings: Settings
@@ -42,27 +61,42 @@ class Evolve {
     
     func start() {
         
-        DispatchQueue.global().async {
-            for _ in 0 ... 1 {
-                var dnaCopy = self.dna
-                
-                // Mutate
-                //                dnaCopy.mutate()
-                
-                // Draw
-                let renderedImage = Tools.drawImage(shapes: self.dna.shapes, shapeType: self.settings.shapeType, imageSize: self.settings.imageSize)
-                
-                // Find fitness
-                let fitness = Tools.fitness(renderedImage: renderedImage, imageData: self.imageData, imageSize: self.settings.imageSize)
-                
-                //Do more
-                DispatchQueue.main.async {
-                    self.outputImage(image: renderedImage)
-                }
-            }
-        }
+        var bestFitness = Int.max
         
+        for _ in 0 ... 1000000 {
+            var dnaCopy = self.dna
+            
+            // Mutate
+            dnaCopy.mutate()
+            
+            // Draw
+            let renderedImage = Tools.drawImage(shapes: dnaCopy.shapes, shapeType: self.settings.shapeType, imageSize: self.settings.imageSize, scale: 1)
+            
+            // Find fitness
+            let fitness = Tools.fitness(renderedImage: renderedImage, imageData: self.imageData, imageSize: self.settings.imageSize)
+            
+            // Output polygons and iterations values
+            self.iterations += 1
+            self.outputIterations(iterations: self.iterations)
+            
+            
+            if fitness < bestFitness {
+                // Replace values with better solution
+                bestFitness = fitness
+                self.dna = dnaCopy
+                
+                // Update UI
+                self.outputPolygons(polygons: self.dna.shapes.count)
+                self.outputFitness(fitness: fitness)
+                let image = Tools.drawImage(shapes: dnaCopy.shapes, shapeType: self.settings.shapeType, imageSize: self.settings.imageSize, scale: 5)
+                self.outputImage(image: image)
+            }
+            
+            //Do more
+            
+        }
     }
+    
 }
 
 
