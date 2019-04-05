@@ -25,16 +25,12 @@ struct DNA {
             case .rectangle:
                 shapes.append(Rectangle(settings: settings))
             case .circle:
-                break
-                //                shape.append(Rectangle())
+                shapes.append(Circle(settings: settings))
             }
-            
         }
     }
     
     mutating func mutate() {
-        
-        
         // Remove Polygon
         if shapes.count > 1 && Tools.probability(chance: settings.removePolygonProbability) {
             shapes.remove(at: Int.random(in: 0 ..< shapes.count)) // Removes random polygon
@@ -48,16 +44,13 @@ struct DNA {
             case .rectangle:
                 shapes.append(Rectangle(settings: settings))
             case .circle:
-                break
+                shapes.append(Rectangle(settings: settings))
             }
         }
             
         for i in 0 ..< shapes.count {
             shapes[i].mutate()
         }
-        
-        
-        
 
     }
 }

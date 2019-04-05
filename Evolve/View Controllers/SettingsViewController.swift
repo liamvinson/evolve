@@ -8,33 +8,38 @@
 
 import UIKit
 
-struct Settings { // Contains default values
-    let shapeType: ShapeType = .polygon
-    let shapeCount: Int = 30
-    let shapeLimit: Int = 100
-    let pointLimit: Int = 5
-    let imageSize: Int = 200
-    
-    let colorDeviation: Double = 0.1
-    let pointDeviation: Int = 30
-    
-    let pointChangeProbability = 0.01
-    let addPointProbability = 0.01
-    let removePointProbability = 0.01
-    let colorChangeProbability = 0.01
-    let removePolygonProbability = 0.01
-    let addPolygonProbability = 0.01
-}
+
 
 class SettingsViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    @IBAction func backPressed(_ sender: Any) {
+        let alert = UIAlertController(title: "Unsaved changes", message: "Are you sure, your changes wont be saved", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action:UIAlertAction) in
+            alert.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: true, completion: nil)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (action:UIAlertAction) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     @IBAction func savePressed(_ sender: Any) {
+        // Put values in settings and send
         dismiss(animated: true, completion: nil)
     }
     

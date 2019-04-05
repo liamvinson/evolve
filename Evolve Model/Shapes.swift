@@ -31,6 +31,7 @@ struct Polygon: Shape {
     }
     
     mutating func mutate() {
+        // Move point
         if Tools.probability(chance: settings.pointChangeProbability) {
             let rand = Int.random(in: 0..<points.count)
             points[rand] = Tools.mutatePoint(point: points[rand], imageSize: settings.imageSize, pointDeviation: settings.pointDeviation)
@@ -55,15 +56,48 @@ struct Polygon: Shape {
 }
 
 struct Rectangle: Shape {
-    let rect: CGRect
-    let color: UIColor
+    let settings: Settings
+    var rect: CGRect
+    var color: UIColor
     
     init(settings: Settings) {
+        self.settings = settings
         rect = Tools.randomRectangle(imageSize: settings.imageSize)
         color = Tools.randomColor()
     }
     
     mutating func mutate() {
+        // Move x
+        if Tools.probability(chance: settings.mutateShape) {
+            rect = Tools.mutateRectanglePosition(rect: rect, imageSize: settings.imageSize, deviation: settings.pointDeviation)
+        }
         
+        //Change Width
+        if Tools.probability(chance: settings.mutateShape) {
+            rect = Tools.mutateRectangleSize(rect: rect, imageSize: settings.imageSize)
+        }
+        
+        // Change color
+        if Tools.probability(chance: settings.colorChangeProbability) {
+            color = Tools.mutateColor(original: color, colorDeviation: settings.colorDeviation)
+        }
+    }
+}
+
+struct Circle: Shape {
+    let settings: Settings
+    var circle: CGRect
+    var color: UIColor
+    
+    init(settings: Settings) {
+        self.settings = settings
+        circle = Tools.randomRectangle(imageSize: settings.imageSize)
+        color = Tools.randomColor()
+    }
+    
+    mutating func mutate() {
+        if Tools.probability(chance: settings.colorChangeProbability) {
+            color = Tools.mutateColor(original: color, colorDeviation: settings.colorDeviation)
+        }
     }
 }

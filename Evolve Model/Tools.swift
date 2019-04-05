@@ -66,7 +66,9 @@ class Tools {
                     ctx.cgContext.setFillColor((i as! Rectangle).color.cgColor)
                     ctx.cgContext.fillPath()
                 case .circle:
-                    break
+                    ctx.cgContext.addEllipse(in: (i as! Circle).circle)
+                    ctx.cgContext.setFillColor((i as! Circle).color.cgColor)
+                    ctx.cgContext.fillPath()
                 }
                 
                 
@@ -135,19 +137,32 @@ class Tools {
     static func mutatePoint(point: CGPoint, imageSize: Int, pointDeviation: Int) -> CGPoint {
         let randomX = myRandom2(in: (0...imageSize), mean: Int(point.x), deviation: pointDeviation)
         let randomY = myRandom2(in: (0...imageSize), mean: Int(point.y), deviation: pointDeviation)
-
+        
         return CGPoint(x: randomX, y: randomY)
     }
     
-
+    static func mutateRectanglePosition(rect: CGRect, imageSize: Int, deviation: Int) -> CGRect {
+        let x = myRandom2(in: 0...imageSize - Int(rect.width), mean: Int(rect.origin.x), deviation: deviation)
+        let y = myRandom2(in: 0...imageSize - Int(rect.height), mean: Int(rect.origin.y), deviation: deviation)
+        
+        return CGRect(x: x, y: y, width: Int(rect.width), height: Int(rect.height))
+    }
+    
+    static func mutateRectangleSize(rect: CGRect, imageSize: Int) -> CGRect {
+        let width = myRandom2(in: 0...imageSize - Int(rect.origin.x), mean: Int(rect.width), deviation: 10)
+        let height = myRandom2(in: 0...imageSize - Int(rect.origin.y), mean: Int(rect.height), deviation: 10)
+        
+        return CGRect(x: Int(rect.origin.x), y: Int(rect.origin.y), width: width, height: height)
+    }
+    
     static func myRandom2(in range: ClosedRange<Int>, mean: Int, deviation: Int) -> Int {
-
+        
         let randomSource = GKARC4RandomSource()
         let randomDistribution = GKGaussianDistribution(randomSource: randomSource, mean: Float(mean), deviation: Float(deviation))
-
+        
         // Clamp the result to within the specified range
         let rnd = randomDistribution.nextInt()
-
+        
         if rnd < range.lowerBound {
             return range.lowerBound
         } else if rnd > range.upperBound {
@@ -160,34 +175,34 @@ class Tools {
     
     
     static func mutateColor(original: UIColor, colorDeviation: Double) -> UIColor {
-            let x = original.cgColor.components!
+        let x = original.cgColor.components!
+        
+        let r = myRandom(mean: Float(x[0]), deviation: Float(colorDeviation), in: (0...1))
+        let g = myRandom(mean: Float(x[1]), deviation: Float(colorDeviation), in: (0...1))
+        let b = myRandom(mean: Float(x[2]), deviation: Float(colorDeviation), in: (0...1))
+        let a = myRandom(mean: Float(x[3]), deviation: Float(colorDeviation), in: (0...1))
+        
+        return UIColor(red: CGFloat(r), green: CGFloat(g), blue: CGFloat(b), alpha: CGFloat(a))
+    }
     
-            let r = myRandom(mean: Float(x[0]), deviation: Float(colorDeviation), in: (0...1))
-            let g = myRandom(mean: Float(x[1]), deviation: Float(colorDeviation), in: (0...1))
-            let b = myRandom(mean: Float(x[2]), deviation: Float(colorDeviation), in: (0...1))
-            let a = myRandom(mean: Float(x[3]), deviation: Float(colorDeviation), in: (0...1))
-    
-            return UIColor(red: CGFloat(r), green: CGFloat(g), blue: CGFloat(b), alpha: CGFloat(a))
+    static func myRandom(mean: Float, deviation: Float, in range: ClosedRange<Float>) -> Float {
+        let randomSource = GKRandomSource()
+        
+        // Checks deviation >= 0
+        
+        guard deviation > 0 else { return mean }
+        
+        let x1 = randomSource.nextUniform() // a random number between 0 and 1
+        let x2 = randomSource.nextUniform() // a random number between 0 and 1
+        let z1 = sqrt(-2 * log(x1)) * cos(2 * Float.pi * x2) // z1 is normally distributed
+        let rnd = z1 * deviation + mean
+        
+        if rnd < range.lowerBound {
+            return range.lowerBound
+        } else if rnd > range.upperBound {
+            return range.upperBound
+        } else {
+            return rnd
         }
-    
-        static func myRandom(mean: Float, deviation: Float, in range: ClosedRange<Float>) -> Float {
-            let randomSource = GKRandomSource()
-    
-            // Checks deviation >= 0
-    
-            guard deviation > 0 else { return mean }
-    
-            let x1 = randomSource.nextUniform() // a random number between 0 and 1
-            let x2 = randomSource.nextUniform() // a random number between 0 and 1
-            let z1 = sqrt(-2 * log(x1)) * cos(2 * Float.pi * x2) // z1 is normally distributed
-            let rnd = z1 * deviation + mean
-    
-            if rnd < range.lowerBound {
-                return range.lowerBound
-            } else if rnd > range.upperBound {
-                return range.upperBound
-            } else {
-                return rnd
-            }
-        }
+    }
 }

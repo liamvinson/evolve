@@ -20,6 +20,7 @@
 		3143478F22563DA50049769C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3143478E22563DA50049769C /* ViewController.swift */; };
 		3143479122563DA80049769C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3143479022563DA80049769C /* Assets.xcassets */; };
 		3143479422563DA80049769C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3143479222563DA80049769C /* Main.storyboard */; };
+		3143479B225769DB0049769C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3143479A225769DB0049769C /* Settings.swift */; };
 		3147516E2253EEF800C013A5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3147516D2253EEF800C013A5 /* SettingsViewController.swift */; };
 		314751702253EF1200C013A5 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3147516F2253EF1200C013A5 /* HelpViewController.swift */; };
 		31D3FEF52254C20D0052C212 /* Evolve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D3FEF42254C20D0052C212 /* Evolve.swift */; };
@@ -44,6 +45,7 @@
 		3143479322563DA80049769C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3143479522563DA80049769C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3143479622563DA80049769C /* MacEvolve.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacEvolve.entitlements; sourceTree = "<group>"; };
+		3143479A225769DB0049769C /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		3147516D2253EEF800C013A5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3147516F2253EF1200C013A5 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		31D3FEF42254C20D0052C212 /* Evolve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Evolve.swift; sourceTree = "<group>"; };
@@ -114,9 +116,10 @@
 			isa = PBXGroup;
 			children = (
 				31D3FEF42254C20D0052C212 /* Evolve.swift */,
-				3143477C22554A740049769C /* Tools.swift */,
 				3143477E22554AE50049769C /* DNA.swift */,
 				3143478022554AF00049769C /* Shapes.swift */,
+				3143479A225769DB0049769C /* Settings.swift */,
+				3143477C22554A740049769C /* Tools.swift */,
 			);
 			path = "Evolve Model";
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				314751702253EF1200C013A5 /* HelpViewController.swift in Sources */,
 				3143478122554AF00049769C /* Shapes.swift in Sources */,
 				312A2EF6224E7BA100C7B9CD /* AppDelegate.swift in Sources */,
+				3143479B225769DB0049769C /* Settings.swift in Sources */,
 				3147516E2253EEF800C013A5 /* SettingsViewController.swift in Sources */,
 				3143477D22554A740049769C /* Tools.swift in Sources */,
 				31D3FEF52254C20D0052C212 /* Evolve.swift in Sources */,
