@@ -21,8 +21,6 @@ class Evolve {
     
     weak var delegate: ModelDelegate?
     
-    
-    
     var iterations = 0
     var polygons = 0
     

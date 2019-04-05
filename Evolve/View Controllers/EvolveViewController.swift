@@ -15,6 +15,42 @@ import GameKit
 //}
 
 class EvolveViewController: UIViewController, ModelDelegate {
+    
+    
+    
+    
+    // Output
+    @IBOutlet weak var outputImage: UIImageView!
+    @IBOutlet weak var outputPolygons: UILabel!
+    @IBOutlet weak var outputIteration: UILabel!
+    @IBOutlet weak var outputFitness: UILabel!
+
+    @IBOutlet weak var toggleButton: UIButton!
+    
+    let image = UIImage(named: "mona")!
+    var generator: Evolve?
+    var running = true
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+        let settings = Settings()
+        generator = Evolve(settings: settings, image: image)
+        generator!.delegate = self
+        generator?.toggle()
+    }
+    
+    func toggle() {
+        if running == true {
+            toggleButton.setImage(UIImage(named: "Play Button"), for: .normal)
+            running = false
+        } else {
+            toggleButton.setImage(UIImage(named: "Pause Button"), for: .normal)
+            running = true
+        }
+    }
+
     func updateFitness(_ fitness: Int) {
         outputFitness.text = String(fitness)
     }
@@ -31,30 +67,8 @@ class EvolveViewController: UIViewController, ModelDelegate {
         outputImage.image = image
     }
     
-    
-    
-    // Output
-    @IBOutlet weak var outputImage: UIImageView!
-    @IBOutlet weak var outputPolygons: UILabel!
-    @IBOutlet weak var outputIteration: UILabel!
-    @IBOutlet weak var outputFitness: UILabel!
-
-
-    let image = UIImage(named: "mona")!
-    var generator: Evolve?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-        let settings = Settings()
-        generator = Evolve(settings: settings, image: image)
-        generator!.delegate = self
-        generator?.toggle()
-    }
-
-    
     @IBAction func pausePressed(_ sender: Any) {
+        toggle()
         generator?.toggle()
     }
     

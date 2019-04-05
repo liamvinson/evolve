@@ -623,7 +623,7 @@ To generate an image make sure you have input an image and then press the genera
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="okc-rg-Jas">
                                                 <rect key="frame" x="80" y="0.0" width="50" height="50"/>
-                                                <state key="normal" image="Play Button"/>
+                                                <state key="normal" image="Pause Button"/>
                                                 <connections>
                                                     <action selector="pausePressed:" destination="zBP-Gl-a66" eventType="touchUpInside" id="0Ub-1z-3xX"/>
                                                 </connections>
@@ -688,6 +688,7 @@ To generate an image make sure you have input an image and then press the genera
                         <outlet property="outputImage" destination="9cX-LK-8L9" id="Aau-jH-WGF"/>
                         <outlet property="outputIteration" destination="OGS-F9-M2T" id="emz-Mx-CIT"/>
                         <outlet property="outputPolygons" destination="5xb-kq-1Vb" id="u0V-tv-dM4"/>
+                        <outlet property="toggleButton" destination="okc-rg-Jas" id="112-xZ-7a4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5UK-VJ-hIW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -700,7 +701,7 @@ To generate an image make sure you have input an image and then press the genera
         <image name="Color Block" width="270" height="7"/>
         <image name="Help Icon" width="25" height="25"/>
         <image name="Image Input" width="250" height="250"/>
-        <image name="Play Button" width="50" height="50"/>
+        <image name="Pause Button" width="50" height="50"/>
         <image name="Reset Icon" width="50" height="50"/>
         <image name="Settings Icon" width="25" height="25"/>
         <namedColor name="Accent">
