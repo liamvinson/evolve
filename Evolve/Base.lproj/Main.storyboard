@@ -624,6 +624,9 @@ To generate an image make sure you have input an image and then press the genera
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="okc-rg-Jas">
                                                 <rect key="frame" x="80" y="0.0" width="50" height="50"/>
                                                 <state key="normal" image="Play Button"/>
+                                                <connections>
+                                                    <action selector="pausePressed:" destination="zBP-Gl-a66" eventType="touchUpInside" id="0Ub-1z-3xX"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDX-Me-LG4">
                                                 <rect key="frame" x="160" y="0.0" width="50" height="50"/>

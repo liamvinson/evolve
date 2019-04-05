@@ -50,12 +50,13 @@ class EvolveViewController: UIViewController, ModelDelegate {
         let settings = Settings()
         generator = Evolve(settings: settings, image: image)
         generator!.delegate = self
-        DispatchQueue.global().async {
-            self.generator?.start()
-        }
+        generator?.toggle()
     }
 
     
+    @IBAction func pausePressed(_ sender: Any) {
+        generator?.toggle()
+    }
     
     /*
      // MARK: - Navigation
