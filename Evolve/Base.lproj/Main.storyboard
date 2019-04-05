@@ -620,6 +620,9 @@ To generate an image make sure you have input an image and then press the genera
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFz-l8-B34">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <state key="normal" image="Reset Icon"/>
+                                                <connections>
+                                                    <action selector="resetPressed:" destination="zBP-Gl-a66" eventType="touchUpInside" id="O6w-8c-Cr1"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="okc-rg-Jas">
                                                 <rect key="frame" x="80" y="0.0" width="50" height="50"/>
@@ -647,8 +650,9 @@ To generate an image make sure you have input an image and then press the genera
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZT8-7S-G3e">
                                 <rect key="frame" x="0.0" y="129" width="375" height="358"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9cX-LK-8L9">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9cX-LK-8L9">
                                         <rect key="frame" x="37.5" y="29" width="300" height="300"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="300" id="WGK-2f-Vcu"/>
                                             <constraint firstAttribute="width" constant="300" id="rya-Is-7nz"/>
@@ -658,6 +662,9 @@ To generate an image make sure you have input an image and then press the genera
                                                 <integer key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="QlV-3J-Lus" appends="YES" id="y7H-IR-8sR"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -692,6 +699,11 @@ To generate an image make sure you have input an image and then press the genera
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5UK-VJ-hIW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.0" id="QlV-3J-Lus">
+                    <connections>
+                        <action selector="holdImage:" destination="zBP-Gl-a66" id="Njb-Db-8Qa"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="952.79999999999995" y="137.18140929535232"/>
         </scene>

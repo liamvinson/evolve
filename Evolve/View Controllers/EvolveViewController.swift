@@ -30,18 +30,28 @@ class EvolveViewController: UIViewController, ModelDelegate {
     let image = UIImage(named: "mona")!
     var generator: Evolve?
     var running = true
+    let settings = Settings()
+    var allowImageUpdate = true
+    var backupImage = UIImage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        let settings = Settings()
+        initiateGenerator()
+    }
+    
+    func initiateGenerator() {
         generator = Evolve(settings: settings, image: image)
         generator!.delegate = self
         generator?.toggle()
     }
     
     func toggle() {
+        // Pause Evolve class
+        generator?.toggle()
+        
+        // Change button
         if running == true {
             toggleButton.setImage(UIImage(named: "Play Button"), for: .normal)
             running = false
@@ -49,6 +59,11 @@ class EvolveViewController: UIViewController, ModelDelegate {
             toggleButton.setImage(UIImage(named: "Pause Button"), for: .normal)
             running = true
         }
+    }
+    
+    func reset() {
+        generator?.stop()
+        initiateGenerator()
     }
 
     func updateFitness(_ fitness: Int) {
@@ -64,14 +79,30 @@ class EvolveViewController: UIViewController, ModelDelegate {
     }
     
     func updateImage(_ image: UIImage) {
-        outputImage.image = image
+        if allowImageUpdate {
+            outputImage.image = image
+        } else {
+            backupImage = image
+        }
+    }
+    
+    @IBAction func holdImage(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == .began {
+            outputImage.image = image
+            allowImageUpdate = false
+        } else if sender.state == .ended {
+            outputImage.image = backupImage
+            allowImageUpdate = true
+        }
     }
     
     @IBAction func pausePressed(_ sender: Any) {
         toggle()
-        generator?.toggle()
     }
     
+    @IBAction func resetPressed(_ sender: Any) {
+        reset()
+    }
     /*
      // MARK: - Navigation
      
