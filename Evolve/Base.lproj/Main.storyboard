@@ -107,7 +107,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="evolve" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9KU-b0-bcv">
-                                <rect key="frame" x="40.5" y="36" width="178.5" height="72"/>
+                                <rect key="frame" x="40.5" y="36" width="304.5" height="72"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
                                 <color key="textColor" name="Text Color"/>
                                 <nil key="highlightedColor"/>
@@ -124,6 +124,7 @@
                             <constraint firstItem="9FN-nR-ph6" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-20" id="Jww-XQ-dIj"/>
                             <constraint firstItem="YfK-eW-xAS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Nc6-He-au1"/>
                             <constraint firstItem="YfK-eW-xAS" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PSv-Xv-KZ0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9KU-b0-bcv" secondAttribute="trailing" constant="30" id="Rmh-9N-0f2"/>
                             <constraint firstItem="aWM-OG-MbM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Sti-uQ-daK"/>
                             <constraint firstItem="YfK-eW-xAS" firstAttribute="top" secondItem="9KU-b0-bcv" secondAttribute="bottom" id="Vqu-fG-iTA"/>
                             <constraint firstItem="aWM-OG-MbM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bAO-HQ-n92"/>
@@ -180,7 +181,10 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jR7-oX-ArE">
-                                <rect key="frame" x="30" y="50" width="26" height="36"/>
+                                <rect key="frame" x="30" y="50" width="30" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="Rgo-lh-tG6"/>
+                                </constraints>
                                 <state key="normal" image="Back Button">
                                     <color key="titleColor" name="Text Color"/>
                                 </state>
@@ -188,8 +192,8 @@
                                     <action selector="backPressed:" destination="ccT-cl-8gt" eventType="touchUpInside" id="DW3-ds-zrR"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VfP-7T-EDK">
-                                <rect key="frame" x="163.5" y="50" width="181.5" height="60"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="settings" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VfP-7T-EDK">
+                                <rect key="frame" x="60" y="50" width="285" height="60"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="50"/>
                                 <color key="textColor" name="Text Color"/>
                                 <nil key="highlightedColor"/>
@@ -359,6 +363,7 @@
                             <constraint firstItem="6ej-12-8bG" firstAttribute="bottom" secondItem="Dzn-2l-h8F" secondAttribute="bottom" id="6hF-Ca-ynN"/>
                             <constraint firstItem="jR7-oX-ArE" firstAttribute="leading" secondItem="Dzn-2l-h8F" secondAttribute="leading" constant="30" id="BvR-Sx-dCP"/>
                             <constraint firstItem="QiV-2P-zld" firstAttribute="top" secondItem="VfP-7T-EDK" secondAttribute="bottom" constant="28" id="FdY-Kh-jA1"/>
+                            <constraint firstItem="VfP-7T-EDK" firstAttribute="leading" secondItem="jR7-oX-ArE" secondAttribute="trailing" id="JVU-6r-mvB"/>
                             <constraint firstItem="6ej-12-8bG" firstAttribute="trailing" secondItem="Dzn-2l-h8F" secondAttribute="trailing" id="Uby-WH-NDt"/>
                             <constraint firstItem="VfP-7T-EDK" firstAttribute="top" secondItem="Dzn-2l-h8F" secondAttribute="top" constant="30" id="Uj0-ki-68F"/>
                             <constraint firstItem="jR7-oX-ArE" firstAttribute="top" secondItem="Dzn-2l-h8F" secondAttribute="top" constant="30" id="hTp-GC-YdJ"/>
@@ -458,10 +463,10 @@ To generate an image make sure you have input an image and then press the genera
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XyZ-Wh-QI5">
-                                <rect key="frame" x="0.0" y="362" width="375" height="305"/>
+                                <rect key="frame" x="0.0" y="317" width="375" height="350"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="8el-f5-zzE">
-                                        <rect key="frame" x="103.5" y="83" width="168" height="122"/>
+                                        <rect key="frame" x="103.5" y="128" width="168" height="122"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="GNk-x3-rSK">
                                                 <rect key="frame" x="0.0" y="0.0" width="68" height="122"/>
@@ -544,7 +549,7 @@ To generate an image make sure you have input an image and then press the genera
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="LGX-JV-a8Q">
-                                        <rect key="frame" x="84" y="235" width="207" height="50"/>
+                                        <rect key="frame" x="84" y="280" width="207" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFz-l8-B34">
                                                 <rect key="frame" x="0.0" y="0.0" width="27" height="50"/>
@@ -576,7 +581,7 @@ To generate an image make sure you have input an image and then press the genera
                                     <constraint firstItem="LGX-JV-a8Q" firstAttribute="top" secondItem="8el-f5-zzE" secondAttribute="bottom" constant="30" id="ADu-pm-yE9"/>
                                     <constraint firstItem="LGX-JV-a8Q" firstAttribute="centerX" secondItem="XyZ-Wh-QI5" secondAttribute="centerX" id="LUs-X4-7Jn"/>
                                     <constraint firstItem="8el-f5-zzE" firstAttribute="centerX" secondItem="XyZ-Wh-QI5" secondAttribute="centerX" id="TcC-Ty-Oxu"/>
-                                    <constraint firstAttribute="height" constant="305" id="UQn-sY-nIs"/>
+                                    <constraint firstAttribute="height" constant="350" id="UQn-sY-nIs"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZT8-7S-G3e">
@@ -604,15 +609,18 @@ To generate an image make sure you have input an image and then press the genera
                                     <constraint firstItem="9cX-LK-8L9" firstAttribute="centerY" secondItem="ZT8-7S-G3e" secondAttribute="centerY" id="WF7-zc-Rxt"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="evolve" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Is0-JM-CX6">
-                                <rect key="frame" x="200" y="50" width="145" height="60"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="evolve" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Is0-JM-CX6">
+                                <rect key="frame" x="60" y="50" width="285" height="60"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="50"/>
                                 <color key="textColor" name="Text Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xqA-5S-mh9">
-                                <rect key="frame" x="30" y="50" width="80" height="36"/>
-                                <state key="normal" title="Button" image="Back Button"/>
+                                <rect key="frame" x="30" y="50" width="30" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="OXQ-rT-AQt"/>
+                                </constraints>
+                                <state key="normal" image="Back Button"/>
                                 <connections>
                                     <action selector="backPressed:" destination="zBP-Gl-a66" eventType="touchUpInside" id="8Ha-oB-Pjt"/>
                                 </connections>
@@ -627,6 +635,7 @@ To generate an image make sure you have input an image and then press the genera
                             <constraint firstItem="XyZ-Wh-QI5" firstAttribute="trailing" secondItem="RZT-jS-xf0" secondAttribute="trailing" id="WWG-h6-M9t"/>
                             <constraint firstItem="ZT8-7S-G3e" firstAttribute="leading" secondItem="RZT-jS-xf0" secondAttribute="leading" id="cce-tc-8o7"/>
                             <constraint firstItem="XyZ-Wh-QI5" firstAttribute="leading" secondItem="RZT-jS-xf0" secondAttribute="leading" id="jmF-jL-EUD"/>
+                            <constraint firstItem="Is0-JM-CX6" firstAttribute="leading" secondItem="xqA-5S-mh9" secondAttribute="trailing" id="oaF-uJ-YFc"/>
                             <constraint firstItem="8el-f5-zzE" firstAttribute="top" secondItem="ZT8-7S-G3e" secondAttribute="bottom" id="q6P-a3-k5k"/>
                             <constraint firstItem="xqA-5S-mh9" firstAttribute="leading" secondItem="RZT-jS-xf0" secondAttribute="leading" constant="30" id="s7P-GG-1Sx"/>
                             <constraint firstItem="Is0-JM-CX6" firstAttribute="top" secondItem="RZT-jS-xf0" secondAttribute="top" constant="30" id="sxB-2j-PIN"/>

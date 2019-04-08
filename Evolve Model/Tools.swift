@@ -13,6 +13,7 @@ import GameKit
 class Tools {
     
     static func randomPolygon(pointLimit: Int, imageSize: Int) -> [CGPoint] {
+        
         var points: [CGPoint] = []
         let number = Int.random(in: 3 ... pointLimit)
         for _ in 0 ..< number {

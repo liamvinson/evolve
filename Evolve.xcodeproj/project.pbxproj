@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31037A72225B838400DA02E0 /* EvolveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31037A71225B838400DA02E0 /* EvolveTests.swift */; };
 		312A2EF6224E7BA100C7B9CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312A2EF5224E7BA100C7B9CD /* AppDelegate.swift */; };
 		312A2EF8224E7BA100C7B9CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312A2EF7224E7BA100C7B9CD /* ViewController.swift */; };
 		312A2EFB224E7BA100C7B9CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 312A2EF9224E7BA100C7B9CD /* Main.storyboard */; };
@@ -26,7 +27,20 @@
 		31D3FEF52254C20D0052C212 /* Evolve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D3FEF42254C20D0052C212 /* Evolve.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		31037A74225B838400DA02E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 312A2EEA224E7BA100C7B9CD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 312A2EF1224E7BA100C7B9CD;
+			remoteInfo = Evolve;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		31037A6F225B838400DA02E0 /* EvolveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EvolveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		31037A71225B838400DA02E0 /* EvolveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolveTests.swift; sourceTree = "<group>"; };
+		31037A73225B838400DA02E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		312A2EF2224E7BA100C7B9CD /* Evolve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Evolve.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		312A2EF5224E7BA100C7B9CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		312A2EF7224E7BA100C7B9CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +66,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		31037A6C225B838400DA02E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		312A2EEF224E7BA100C7B9CD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -69,12 +90,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		31037A70225B838400DA02E0 /* EvolveTests */ = {
+			isa = PBXGroup;
+			children = (
+				31037A71225B838400DA02E0 /* EvolveTests.swift */,
+				31037A73225B838400DA02E0 /* Info.plist */,
+			);
+			path = EvolveTests;
+			sourceTree = "<group>";
+		};
 		312A2EE9224E7BA100C7B9CD = {
 			isa = PBXGroup;
 			children = (
 				3143478322554B8F0049769C /* Evolve Model */,
 				312A2EF4224E7BA100C7B9CD /* Evolve */,
 				3143478B22563DA50049769C /* MacEvolve */,
+				31037A70225B838400DA02E0 /* EvolveTests */,
 				312A2EF3224E7BA100C7B9CD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -84,6 +115,7 @@
 			children = (
 				312A2EF2224E7BA100C7B9CD /* Evolve.app */,
 				3143478A22563DA50049769C /* MacEvolve.app */,
+				31037A6F225B838400DA02E0 /* EvolveTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,6 +172,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		31037A6E225B838400DA02E0 /* EvolveTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 31037A78225B838400DA02E0 /* Build configuration list for PBXNativeTarget "EvolveTests" */;
+			buildPhases = (
+				31037A6B225B838400DA02E0 /* Sources */,
+				31037A6C225B838400DA02E0 /* Frameworks */,
+				31037A6D225B838400DA02E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				31037A75225B838400DA02E0 /* PBXTargetDependency */,
+			);
+			name = EvolveTests;
+			productName = EvolveTests;
+			productReference = 31037A6F225B838400DA02E0 /* EvolveTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		312A2EF1224E7BA100C7B9CD /* Evolve */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 312A2F04224E7BA300C7B9CD /* Build configuration list for PBXNativeTarget "Evolve" */;
@@ -184,6 +234,10 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Liam Vinson";
 				TargetAttributes = {
+					31037A6E225B838400DA02E0 = {
+						CreatedOnToolsVersion = 10.2;
+						TestTargetID = 312A2EF1224E7BA100C7B9CD;
+					};
 					312A2EF1224E7BA100C7B9CD = {
 						CreatedOnToolsVersion = 10.2;
 					};
@@ -207,11 +261,19 @@
 			targets = (
 				312A2EF1224E7BA100C7B9CD /* Evolve */,
 				3143478922563DA50049769C /* MacEvolve */,
+				31037A6E225B838400DA02E0 /* EvolveTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		31037A6D225B838400DA02E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		312A2EF0224E7BA100C7B9CD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -234,6 +296,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		31037A6B225B838400DA02E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31037A72225B838400DA02E0 /* EvolveTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		312A2EEE224E7BA100C7B9CD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -261,6 +331,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		31037A75225B838400DA02E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 312A2EF1224E7BA100C7B9CD /* Evolve */;
+			targetProxy = 31037A74225B838400DA02E0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		312A2EF9224E7BA100C7B9CD /* Main.storyboard */ = {
@@ -290,6 +368,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		31037A76225B838400DA02E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LHZS8DC4DB;
+				INFOPLIST_FILE = EvolveTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example..EvolveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Evolve.app/Evolve";
+			};
+			name = Debug;
+		};
+		31037A77225B838400DA02E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LHZS8DC4DB;
+				INFOPLIST_FILE = EvolveTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example..EvolveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Evolve.app/Evolve";
+			};
+			name = Release;
+		};
 		312A2F02224E7BA300C7B9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -489,6 +607,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		31037A78225B838400DA02E0 /* Build configuration list for PBXNativeTarget "EvolveTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31037A76225B838400DA02E0 /* Debug */,
+				31037A77225B838400DA02E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		312A2EED224E7BA100C7B9CD /* Build configuration list for PBXProject "Evolve" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
