@@ -67,7 +67,7 @@ struct Rectangle: Shape {
     }
     
     mutating func mutate() {
-        // Move x
+        // Move
         if Tools.probability(chance: settings.mutateShape) {
             rect = Tools.mutateRectanglePosition(rect: rect, imageSize: settings.imageSize, deviation: settings.pointDeviation)
         }
@@ -96,6 +96,16 @@ struct Circle: Shape {
     }
     
     mutating func mutate() {
+        // Move
+        if Tools.probability(chance: settings.mutateShape) {
+            circle = Tools.mutateRectanglePosition(rect: circle, imageSize: settings.imageSize, deviation: settings.pointDeviation)
+        }
+        
+        //Change Width
+        if Tools.probability(chance: settings.mutateShape) {
+            circle = Tools.mutateRectangleSize(rect: circle, imageSize: settings.imageSize)
+        }
+
         if Tools.probability(chance: settings.colorChangeProbability) {
             color = Tools.mutateColor(original: color, colorDeviation: settings.colorDeviation)
         }

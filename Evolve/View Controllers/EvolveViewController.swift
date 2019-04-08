@@ -7,16 +7,9 @@
 //
 
 import UIKit
-import GameKit
 
-//struct Polygon {
-//    var points: [CGPoint]
-//    var color: UIColor
-//}
 
 class EvolveViewController: UIViewController, ModelDelegate {
-    
-    
     
     
     // Output
@@ -95,6 +88,10 @@ class EvolveViewController: UIViewController, ModelDelegate {
             allowImageUpdate = true
         }
     }
+    @IBAction func backPressed(_ sender: Any) {
+        generator?.stop()
+        dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func pausePressed(_ sender: Any) {
         toggle()
@@ -103,6 +100,14 @@ class EvolveViewController: UIViewController, ModelDelegate {
     @IBAction func resetPressed(_ sender: Any) {
         reset()
     }
+    
+    @IBAction func sharePressed(_ sender: Any) {
+        let activityItem: [AnyObject] = [self.outputImage.image as AnyObject]
+        let avc = UIActivityViewController(activityItems: activityItem as [AnyObject], applicationActivities: nil)
+        present(avc, animated: true, completion: nil)
+    }
+    
+    
     /*
      // MARK: - Navigation
      
