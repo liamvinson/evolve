@@ -10,10 +10,11 @@ import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    
-
     @IBOutlet weak var imageOutput: UIImageView!
     @IBOutlet weak var shapeTypeInput: UITextField!
+    
+    var settings = Settings()
+    var changed = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,13 +54,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         shapeTypeInput.text = ShapeType.allCases[row].rawValue
     }
     
-    
-    
-    
-    
-    
-    
-    
 
     // Image Picker
     @IBAction func chooseImage(_ sender: Any) {
@@ -89,12 +83,28 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let image = info[UIImagePickerController.InfoKey.editedImage] as! UIImage
         
         imageOutput.image = image
+        changed = true
         
         picker.dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "settings" {
+            let controller = segue.destination as! SettingsViewController
+            controller.settings = settings
+        } else if segue.identifier == "help" {
+            let _ = segue.destination as! HelpViewController
+        } else if segue.identifier == "evolve" {
+            let controller = segue.destination as! EvolveViewController
+            if changed == true {
+                controller.image = imageOutput.image!
+            }
+        }
     }
     
 }

@@ -31,7 +31,8 @@ class Evolve {
     
     init(settings: Settings, image: UIImage) {
         self.settings = settings
-        self.imageData = Tools.getPixelData(image: image, width: settings.imageSize, height: settings.imageSize)
+        let modifiedImage = Tools.resizeImage(image: image, targetSize: CGSize(width: settings.imageSize, height: settings.imageSize))
+        self.imageData = Tools.getPixelData(image: modifiedImage, width: settings.imageSize, height: settings.imageSize)
         dna = DNA(settings: settings)
     }
     
@@ -112,16 +113,6 @@ class Evolve {
     }
     
 }
-
-
-
-
-
-
-
-
-
-
 
 
 

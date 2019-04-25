@@ -9,21 +9,15 @@
 import Foundation
 
 struct Settings { // Contains default values
-    let shapeType: ShapeType = .rectangle
-    let shapeCount: Int = 30
-    let shapeLimit: Int = 100
-    let pointLimit: Int = 5
-    let imageSize: Int = 200
+    var shapeType: ShapeType = .polygon
+    var shapeCount: Int = 30
+    var shapeLimit: Int = 100
+    var pointLimit: Int = 5
+    var imageSize: Int = 100
     
-    let colorDeviation: Double = 0.1
-    let pointDeviation: Int = 30
+    var colorDeviation: Double = 0.1
+    var pointDeviation: Int = 30
     
-    let pointChangeProbability = 0.01
-    let addPointProbability = 0.01
-    let removePointProbability = 0.01
-    let colorChangeProbability = 0.01
-    let removePolygonProbability = 0.01
-    let addPolygonProbability = 0.01
-    
-    let mutateShape = 0.01
+    var mutateDNA = 0.01
+    var mutateShape = 0.01
 }

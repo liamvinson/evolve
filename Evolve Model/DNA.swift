@@ -32,12 +32,12 @@ struct DNA {
     
     mutating func mutate() {
         // Remove Polygon
-        if shapes.count > 1 && Tools.probability(chance: settings.removePolygonProbability) {
+        if shapes.count > 1 && Tools.probability(chance: settings.mutateDNA) {
             shapes.remove(at: Int.random(in: 0 ..< shapes.count)) // Removes random polygon
         }
 
         // Add polygon
-        if Tools.probability(chance: settings.addPolygonProbability) {
+        if Tools.probability(chance: settings.mutateDNA) && shapes.count > settings.shapeLimit {
             switch settings.shapeType {
             case .polygon:
                 shapes.append(Polygon(settings: settings))

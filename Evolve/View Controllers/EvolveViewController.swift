@@ -20,7 +20,7 @@ class EvolveViewController: UIViewController, ModelDelegate {
 
     @IBOutlet weak var toggleButton: UIButton!
     
-    let image = UIImage(named: "mona")!
+    var image = UIImage(named: "mona")!
     var generator: Evolve?
     var running = true
     let settings = Settings()

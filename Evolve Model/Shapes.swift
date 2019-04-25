@@ -32,24 +32,24 @@ struct Polygon: Shape {
     
     mutating func mutate() {
         // Move point
-        if Tools.probability(chance: settings.pointChangeProbability) {
+        if Tools.probability(chance: settings.mutateShape) {
             let rand = Int.random(in: 0..<points.count)
             points[rand] = Tools.mutatePoint(point: points[rand], imageSize: settings.imageSize, pointDeviation: settings.pointDeviation)
         }
 
         //Remove a point
-        if points.count > 3 && Tools.probability(chance: settings.removePointProbability) {
+        if points.count > 3 && Tools.probability(chance: settings.mutateShape) {
             let rand = Int.random(in: 0..<points.count)
             points.remove(at: rand)
         }
 
         //Add a point
-        if points.count < settings.pointLimit && Tools.probability(chance: settings.addPointProbability) {
+        if points.count < settings.pointLimit && Tools.probability(chance: settings.mutateShape) {
             points.append(Tools.randomPoint(limit: settings.imageSize))
         }
 
         // Change color
-        if Tools.probability(chance: settings.colorChangeProbability) {
+        if Tools.probability(chance: settings.mutateShape) {
             color = Tools.mutateColor(original: color, colorDeviation: settings.colorDeviation)
         }
     }
@@ -72,13 +72,13 @@ struct Rectangle: Shape {
             rect = Tools.mutateRectanglePosition(rect: rect, imageSize: settings.imageSize, deviation: settings.pointDeviation)
         }
         
-        //Change Width
+        //Change Size
         if Tools.probability(chance: settings.mutateShape) {
             rect = Tools.mutateRectangleSize(rect: rect, imageSize: settings.imageSize)
         }
         
         // Change color
-        if Tools.probability(chance: settings.colorChangeProbability) {
+        if Tools.probability(chance: settings.mutateShape) {
             color = Tools.mutateColor(original: color, colorDeviation: settings.colorDeviation)
         }
     }
@@ -106,7 +106,7 @@ struct Circle: Shape {
             circle = Tools.mutateRectangleSize(rect: circle, imageSize: settings.imageSize)
         }
 
-        if Tools.probability(chance: settings.colorChangeProbability) {
+        if Tools.probability(chance: settings.mutateShape) {
             color = Tools.mutateColor(original: color, colorDeviation: settings.colorDeviation)
         }
     }

@@ -88,9 +88,9 @@ class Tools {
         let x = width * height * 4
         for i in stride(from: 0, to: x, by: 4) {
             
-            let r = Int(data[i])
+            let r = Int(data[i+2])
             let g = Int(data[i+1])
-            let b = Int(data[i+2])
+            let b = Int(data[i])
             let a = Int(data[i+3])
             
             pixels.append(r)
@@ -205,5 +205,28 @@ class Tools {
         } else {
             return rnd
         }
+    }
+    
+    static func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+        let size = image.size
+        
+        let widthRatio  = targetSize.width  / size.width
+        let heightRatio = targetSize.height / size.height
+        
+        var newSize: CGSize
+        if(widthRatio > heightRatio) {
+            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+        } else {
+            newSize = CGSize(width: size.width * widthRatio, height: size.height *      widthRatio)
+        }
+        
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+        
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
     }
 }

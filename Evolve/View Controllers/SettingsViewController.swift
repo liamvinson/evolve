@@ -12,6 +12,19 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
+    var settings = Settings()
+    
+    @IBOutlet weak var pointLimit: UITextField!
+    @IBOutlet weak var shapeCount: UITextField!
+    @IBOutlet weak var shapeLimit: UITextField!
+    @IBOutlet weak var imageSize: UITextField!
+    
+    @IBOutlet weak var colorDeviation: UITextField!
+    @IBOutlet weak var pointDeviation: UITextField!
+    
+    @IBOutlet weak var mutateDNA: UITextField!
+    @IBOutlet weak var mutateShape: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,6 +52,14 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func savePressed(_ sender: Any) {
+        settings.pointLimit = Int(pointLimit.text!)!
+        settings.shapeCount = Int(shapeCount.text!)!
+        settings.shapeLimit = Int(shapeLimit.text!)!
+        settings.imageSize = Int(imageSize.text!)!
+        settings.colorDeviation = Double(colorDeviation.text!)!
+        settings.pointDeviation = Int(pointDeviation.text!)!
+        settings.mutateDNA = Double(mutateDNA.text!)!
+        settings.mutateShape = Double(mutateShape.text!)!
         // Put values in settings and send
         dismiss(animated: true, completion: nil)
     }
