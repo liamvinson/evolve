@@ -39,18 +39,18 @@ struct Polygon: Shape {
         }
 
         //Remove a point
-        if points.count > 3 && Tools.probability(chance: settings.mutateShape) {
+        if points.count > 3 && Tools.probability(chance: 0.0) {
             let rand = Int.random(in: 0..<points.count)
             points.remove(at: rand)
         }
 
         //Add a point
-        if points.count < settings.pointLimit && Tools.probability(chance: settings.mutateShape) {
-            points.append(Tools.randomPoint(limit: settings.imageSize))
+        if points.count < settings.pointLimit && Tools.probability(chance: 0.0) {
+            points.append(Tools.mutatePoint(point: points[0], imageSize: settings.imageSize, pointDeviation: settings.pointDeviation))
         }
 
         // Change color
-        if Tools.probability(chance: settings.mutateShape) {
+        if Tools.probability(chance: 0.01) {
             color = Tools.mutateColor(original: color, colorDeviation: settings.colorDeviation)
         }
     }

@@ -14,11 +14,20 @@ class Tools {
     
     static func randomPolygon(pointLimit: Int, imageSize: Int) -> [CGPoint] {
         
+//        var points: [CGPoint] = []
+//        let number = Int.random(in: 3 ... pointLimit)
+//        for _ in 0 ..< number {
+//            points.append(randomPoint(limit: imageSize))
+//        }
+        
         var points: [CGPoint] = []
         let number = Int.random(in: 3 ... pointLimit)
+        var point = randomPoint(limit: imageSize)
         for _ in 0 ..< number {
-            points.append(randomPoint(limit: imageSize))
+            points.append(point)
+            point = mutatePoint(point: point, imageSize: imageSize, pointDeviation: 10)
         }
+        
         return points
     }
     
@@ -236,10 +245,7 @@ class Tools {
         let r = CGFloat(imageData[index]) / 255
         let g = CGFloat(imageData[index + 1]) / 255
         let b = CGFloat(imageData[index + 2]) / 255
-//        let a = CGFloat(imageData[index + 3]) / 255
         let a = 0.5
-        
-        print(r, g, b, a)
         
         return UIColor(red: CGFloat(r), green: CGFloat(g), blue: CGFloat(b), alpha: CGFloat(a))
     }

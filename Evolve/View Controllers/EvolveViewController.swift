@@ -72,10 +72,6 @@ class EvolveViewController: UIViewController, ModelDelegate {
 
     func updateFitness(_ fitness: Int) {
         outputFitness.text = String(fitness)
-        if fitness < 100000 {
-            print("Done")
-            print(outputTime.text!)
-        }
     }
     
     func updatePolygons(_ polygons: Int) {
@@ -84,6 +80,9 @@ class EvolveViewController: UIViewController, ModelDelegate {
     
     func updateIterations(_ iterations: Int) {
         outputIteration.text = String(iterations)
+        if iterations == 50000 {
+            print(outputFitness.text!)
+        }
     }
     
     func updateImage(_ image: UIImage) {
