@@ -33,7 +33,7 @@ class Evolve {
         self.settings = settings
         let modifiedImage = Tools.resizeImage(image: image, targetSize: CGSize(width: settings.imageSize, height: settings.imageSize))
         self.imageData = Tools.getPixelData(image: modifiedImage, width: settings.imageSize, height: settings.imageSize)
-        dna = DNA(settings: settings)
+        dna = DNA(settings: settings, imageData: imageData)
     }
     
     
@@ -56,6 +56,7 @@ class Evolve {
             // Output polygons and iterations values
             self.iterations += 1
             self.outputIterations(iterations: iterations)
+            
             
             
             if fitness < bestFitness {

@@ -10,10 +10,13 @@ import Cocoa
 
 class ViewController: NSViewController {
 
+    @IBOutlet weak var imageOutlet: NSImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        imageOutlet.image = UIImage(named: "mona")
     }
 
     override var representedObject: Any? {

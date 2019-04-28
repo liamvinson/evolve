@@ -18,6 +18,7 @@ class EvolveViewController: UIViewController, ModelDelegate {
     @IBOutlet weak var outputIteration: UILabel!
     @IBOutlet weak var outputFitness: UILabel!
 
+    @IBOutlet weak var outputTime: UILabel!
     @IBOutlet weak var toggleButton: UIButton!
     
     var image = UIImage(named: "mona")!
@@ -26,6 +27,8 @@ class EvolveViewController: UIViewController, ModelDelegate {
     let settings = Settings()
     var allowImageUpdate = true
     var backupImage = UIImage()
+    var timer = Timer()
+    var myTime = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +41,14 @@ class EvolveViewController: UIViewController, ModelDelegate {
         generator = Evolve(settings: settings, image: image)
         generator!.delegate = self
         generator?.toggle()
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in self.codeToBeRun() })
+    }
+    
+    
+    
+    func codeToBeRun() {
+        myTime += 1
+        outputTime.text = String(myTime) + "s"
     }
     
     func toggle() {
@@ -61,6 +72,10 @@ class EvolveViewController: UIViewController, ModelDelegate {
 
     func updateFitness(_ fitness: Int) {
         outputFitness.text = String(fitness)
+        if fitness < 100000 {
+            print("Done")
+            print(outputTime.text!)
+        }
     }
     
     func updatePolygons(_ polygons: Int) {
@@ -94,11 +109,13 @@ class EvolveViewController: UIViewController, ModelDelegate {
     }
     
     @IBAction func pausePressed(_ sender: Any) {
+        timer.invalidate()
         toggle()
     }
     
     @IBAction func resetPressed(_ sender: Any) {
         reset()
+        myTime = 0
     }
     
     @IBAction func sharePressed(_ sender: Any) {

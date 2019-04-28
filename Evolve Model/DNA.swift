@@ -11,9 +11,11 @@ import Foundation
 struct DNA {
     var shapes: [Shape] = []
     let settings: Settings
+    let imageData: [Int]
     
-    init(settings: Settings) {
+    init(settings: Settings, imageData: [Int]) {
         self.settings = settings
+        self.imageData = imageData
         generateShapes()
     }
     
@@ -21,7 +23,7 @@ struct DNA {
         for _ in 0 ..< settings.shapeCount {
             switch settings.shapeType {
             case .polygon:
-                shapes.append(Polygon(settings: settings))
+                shapes.append(Polygon(settings: settings, imageData: imageData))
             case .rectangle:
                 shapes.append(Rectangle(settings: settings))
             case .circle:
@@ -40,7 +42,7 @@ struct DNA {
         if Tools.probability(chance: settings.mutateDNA) && shapes.count > settings.shapeLimit {
             switch settings.shapeType {
             case .polygon:
-                shapes.append(Polygon(settings: settings))
+                shapes.append(Polygon(settings: settings, imageData: imageData))
             case .rectangle:
                 shapes.append(Rectangle(settings: settings))
             case .circle:

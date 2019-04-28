@@ -506,23 +506,23 @@ To share the image click on the share button and you will be able to save to the
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XyZ-Wh-QI5">
                                 <rect key="frame" x="0.0" y="317" width="375" height="350"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="8el-f5-zzE">
-                                        <rect key="frame" x="103.5" y="128" width="168" height="122"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8el-f5-zzE">
+                                        <rect key="frame" x="52.5" y="128" width="270" height="122"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="GNk-x3-rSK">
-                                                <rect key="frame" x="0.0" y="0.0" width="68" height="122"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="135" height="122"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Mxe-6R-hAj">
-                                                        <rect key="frame" x="0.0" y="0.0" width="68" height="46"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="135" height="46"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5xb-kq-1Vb">
-                                                                <rect key="frame" x="0.0" y="0.0" width="68" height="26.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5xb-kq-1Vb">
+                                                                <rect key="frame" x="0.0" y="0.0" width="135" height="26.5"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                                 <color key="textColor" name="Accent"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="polygons" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDz-oQ-oAu">
-                                                                <rect key="frame" x="0.0" y="26.5" width="68" height="19.5"/>
+                                                                <rect key="frame" x="0.0" y="26.5" width="135" height="19.5"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -530,16 +530,16 @@ To share the image click on the share button and you will be able to save to the
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="GNE-uS-d7q">
-                                                        <rect key="frame" x="0.0" y="76" width="68" height="46"/>
+                                                        <rect key="frame" x="0.0" y="76" width="135" height="46"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXg-Ab-6pX">
-                                                                <rect key="frame" x="0.0" y="0.0" width="68" height="26.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXg-Ab-6pX">
+                                                                <rect key="frame" x="0.0" y="0.0" width="135" height="26.5"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                                 <color key="textColor" name="Accent"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fitness" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4kG-8L-cef">
-                                                                <rect key="frame" x="0.0" y="26.5" width="68" height="19.5"/>
+                                                                <rect key="frame" x="0.0" y="26.5" width="135" height="19.5"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -549,19 +549,19 @@ To share the image click on the share button and you will be able to save to the
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Yqu-kH-AJC">
-                                                <rect key="frame" x="98" y="0.0" width="70" height="122"/>
+                                                <rect key="frame" x="135" y="0.0" width="135" height="122"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Tyg-TV-KII">
-                                                        <rect key="frame" x="0.0" y="0.0" width="70" height="46"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="135" height="46"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OGS-F9-M2T">
-                                                                <rect key="frame" x="0.0" y="0.0" width="70" height="26.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="135" height="26.5"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                                 <color key="textColor" name="Accent"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iterations" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeX-K7-gzI">
-                                                                <rect key="frame" x="0.0" y="26.5" width="70" height="19.5"/>
+                                                                <rect key="frame" x="0.0" y="26.5" width="135" height="19.5"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -569,16 +569,16 @@ To share the image click on the share button and you will be able to save to the
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JMp-Z6-4o1">
-                                                        <rect key="frame" x="0.0" y="76" width="70" height="46"/>
+                                                        <rect key="frame" x="0.0" y="76" width="135" height="46"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vax-Uv-STJ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="70" height="26.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vax-Uv-STJ">
+                                                                <rect key="frame" x="0.0" y="0.0" width="135" height="26.5"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                                 <color key="textColor" name="Accent"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Hx-MY-N3y">
-                                                                <rect key="frame" x="0.0" y="26.5" width="70" height="19.5"/>
+                                                                <rect key="frame" x="0.0" y="26.5" width="135" height="19.5"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -671,6 +671,7 @@ To share the image click on the share button and you will be able to save to the
                         <constraints>
                             <constraint firstItem="RZT-jS-xf0" firstAttribute="trailing" secondItem="Is0-JM-CX6" secondAttribute="trailing" constant="30" id="0CH-1i-rOG"/>
                             <constraint firstItem="xqA-5S-mh9" firstAttribute="top" secondItem="RZT-jS-xf0" secondAttribute="top" constant="30" id="0Me-4g-5c6"/>
+                            <constraint firstItem="8el-f5-zzE" firstAttribute="leading" secondItem="9cX-LK-8L9" secondAttribute="leading" id="2lN-7s-8Ng"/>
                             <constraint firstItem="XyZ-Wh-QI5" firstAttribute="bottom" secondItem="RZT-jS-xf0" secondAttribute="bottom" id="9ml-yi-bfI"/>
                             <constraint firstItem="ZT8-7S-G3e" firstAttribute="trailing" secondItem="RZT-jS-xf0" secondAttribute="trailing" id="C0R-tV-f6c"/>
                             <constraint firstItem="XyZ-Wh-QI5" firstAttribute="trailing" secondItem="RZT-jS-xf0" secondAttribute="trailing" id="WWG-h6-M9t"/>
@@ -680,6 +681,7 @@ To share the image click on the share button and you will be able to save to the
                             <constraint firstItem="8el-f5-zzE" firstAttribute="top" secondItem="ZT8-7S-G3e" secondAttribute="bottom" id="q6P-a3-k5k"/>
                             <constraint firstItem="xqA-5S-mh9" firstAttribute="leading" secondItem="RZT-jS-xf0" secondAttribute="leading" constant="30" id="s7P-GG-1Sx"/>
                             <constraint firstItem="Is0-JM-CX6" firstAttribute="top" secondItem="RZT-jS-xf0" secondAttribute="top" constant="20" id="sxB-2j-PIN"/>
+                            <constraint firstItem="8el-f5-zzE" firstAttribute="trailing" secondItem="9cX-LK-8L9" secondAttribute="trailing" id="xPx-ky-Qzf"/>
                             <constraint firstItem="ZT8-7S-G3e" firstAttribute="top" secondItem="Is0-JM-CX6" secondAttribute="bottom" id="zNR-PZ-7Pc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RZT-jS-xf0"/>
@@ -689,6 +691,7 @@ To share the image click on the share button and you will be able to save to the
                         <outlet property="outputImage" destination="9cX-LK-8L9" id="Aau-jH-WGF"/>
                         <outlet property="outputIteration" destination="OGS-F9-M2T" id="emz-Mx-CIT"/>
                         <outlet property="outputPolygons" destination="5xb-kq-1Vb" id="u0V-tv-dM4"/>
+                        <outlet property="outputTime" destination="Vax-Uv-STJ" id="k7p-YT-v9j"/>
                         <outlet property="toggleButton" destination="okc-rg-Jas" id="112-xZ-7a4"/>
                     </connections>
                 </viewController>
