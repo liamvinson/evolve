@@ -25,7 +25,7 @@ class Tools {
         var point = randomPoint(limit: imageSize)
         for _ in 0 ..< number {
             points.append(point)
-            point = mutatePoint(point: point, imageSize: imageSize, pointDeviation: 10)
+            point = mutatePoint(point: point, imageSize: imageSize, pointDeviation: 3)
         }
         
         return points
