@@ -25,9 +25,9 @@ struct DNA {
             case .polygon:
                 shapes.append(Polygon(settings: settings, imageData: imageData))
             case .rectangle:
-                shapes.append(Rectangle(settings: settings))
+                shapes.append(Rectangle(settings: settings, imageData: imageData))
             case .circle:
-                shapes.append(Circle(settings: settings))
+                shapes.append(Circle(settings: settings, imageData: imageData))
             }
         }
     }
@@ -42,11 +42,11 @@ struct DNA {
         if Tools.probability(chance: settings.mutateDNA) && shapes.count < settings.shapeLimit {
             switch settings.shapeType {
             case .polygon:
-                shapes.insert(Polygon(settings: settings, imageData: imageData), at: 0)
+                shapes.append(Polygon(settings: settings, imageData: imageData))
             case .rectangle:
-                shapes.insert(Rectangle(settings: settings), at: 0)
+                shapes.append(Rectangle(settings: settings, imageData: imageData))
             case .circle:
-                shapes.insert(Rectangle(settings: settings), at: 0)
+                shapes.append(Circle(settings: settings, imageData: imageData))
             }
         }
             

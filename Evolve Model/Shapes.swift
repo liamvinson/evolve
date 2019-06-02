@@ -27,7 +27,6 @@ struct Polygon: Shape {
     init(settings: Settings, imageData: [Int]) {
         self.settings = settings
         points = Tools.randomPolygon(pointLimit: settings.pointLimit, imageSize: settings.imageSize)
-//        color = Tools.randomColor()
         color = Tools.guessColor(x: Int(points[0].x), y: Int(points[0].y), imageData: imageData)
     }
     
@@ -61,10 +60,10 @@ struct Rectangle: Shape {
     var rect: CGRect
     var color: UIColor
     
-    init(settings: Settings) {
+    init(settings: Settings, imageData: [Int]) {
         self.settings = settings
         rect = Tools.randomRectangle(imageSize: settings.imageSize)
-        color = Tools.randomColor()
+        color = Tools.guessColor(x: Int(rect.midX), y: Int(rect.midY), imageData: imageData)
     }
     
     mutating func mutate() {
@@ -90,10 +89,10 @@ struct Circle: Shape {
     var circle: CGRect
     var color: UIColor
     
-    init(settings: Settings) {
+    init(settings: Settings, imageData: [Int]) {
         self.settings = settings
         circle = Tools.randomRectangle(imageSize: settings.imageSize)
-        color = Tools.randomColor()
+        color = Tools.guessColor(x: Int(circle.midX), y: Int(circle.midY), imageData: imageData)
     }
     
     mutating func mutate() {

@@ -15,6 +15,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     var settings = Settings()
     var changed = false
+    var type = ShapeType.polygon
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +53,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         shapeTypeInput.text = ShapeType.allCases[row].rawValue
+        type = ShapeType.allCases[row]
     }
     
 
@@ -101,9 +103,34 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             let _ = segue.destination as! HelpViewController
         } else if segue.identifier == "evolve" {
             let controller = segue.destination as! EvolveViewController
+            switch type {
+            case .polygon:
+                settings.shapeType = .polygon
+            case .rectangle:
+                settings.shapeType = .rectangle
+            case .circle:
+                settings.shapeType = .circle
+            }
+            controller.settings = settings
             if changed == true {
                 controller.image = imageOutput.image!
             }
+            
+        }
+    }
+    
+    @IBAction func unwindToThisView(sender: UIStoryboardSegue) {
+        if let src = sender.source as? SettingsViewController {
+            
+            settings.pointLimit = Int(src.pointLimit.text!)!
+            settings.shapeCount = Int(src.shapeCount.text!)!
+            settings.shapeLimit = Int(src.shapeLimit.text!)!
+            settings.imageSize = Int(src.imageSize.text!)!
+            settings.colorDeviation = Double(src.colorDeviation.text!)!
+            settings.pointDeviation = Int(src.pointDeviation.text!)!
+            settings.mutateDNA = Double(src.mutateDNA.text!)!
+            settings.mutateShape = Double(src.mutateShape.text!)!
+            
         }
     }
     

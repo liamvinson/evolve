@@ -39,8 +39,8 @@ class Tools {
     
     static func randomRectangle(imageSize: Int) -> CGRect {
         
-        let width = Int.random(in: 0 ... imageSize)
-        let height = Int.random(in: 0 ... imageSize)
+        let width = Int.random(in: 0 ... 5)
+        let height = Int.random(in: 0 ... 5)
         let x = Int.random(in: 0 ... imageSize - width)
         let y = Int.random(in: 0...imageSize - height)
         
@@ -132,7 +132,7 @@ class Tools {
             
         }
         
-        return pixelFitness / 1000
+        return pixelFitness
         
     }
     
@@ -159,8 +159,8 @@ class Tools {
     }
     
     static func mutateRectangleSize(rect: CGRect, imageSize: Int) -> CGRect {
-        let width = myRandom2(in: 0...imageSize - Int(rect.origin.x), mean: Int(rect.width), deviation: 10)
-        let height = myRandom2(in: 0...imageSize - Int(rect.origin.y), mean: Int(rect.height), deviation: 10)
+        let width = myRandom2(in: 0...imageSize - Int(rect.origin.x), mean: Int(rect.width), deviation: 1)
+        let height = myRandom2(in: 0...imageSize - Int(rect.origin.y), mean: Int(rect.height), deviation: 1)
         
         return CGRect(x: Int(rect.origin.x), y: Int(rect.origin.y), width: width, height: height)
     }

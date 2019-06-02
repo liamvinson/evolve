@@ -22,6 +22,8 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Use your camera to input an image</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>To save phots</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Use your photos to input an image.</string>
 	<key>UILaunchStoryboardName</key>

@@ -51,19 +51,6 @@ class SettingsViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func savePressed(_ sender: Any) {
-        settings.pointLimit = Int(pointLimit.text!)!
-        settings.shapeCount = Int(shapeCount.text!)!
-        settings.shapeLimit = Int(shapeLimit.text!)!
-        settings.imageSize = Int(imageSize.text!)!
-        settings.colorDeviation = Double(colorDeviation.text!)!
-        settings.pointDeviation = Int(pointDeviation.text!)!
-        settings.mutateDNA = Double(mutateDNA.text!)!
-        settings.mutateShape = Double(mutateShape.text!)!
-        // Put values in settings and send
-        dismiss(animated: true, completion: nil)
-    }
-    
     /*
     // MARK: - Navigation
 

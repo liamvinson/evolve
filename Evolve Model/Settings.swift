@@ -10,14 +10,17 @@ import Foundation
 
 struct Settings { // Contains default values
     var shapeType: ShapeType = .polygon
-    var shapeCount: Int = 50
-    var shapeLimit: Int = 100
+    var shapeCount: Int = 150
+    var shapeLimit: Int = 200
     var pointLimit: Int = 9
     var imageSize: Int = 75
     
     var colorDeviation: Double = 0.01
     var pointDeviation: Int = 1
     
-    var mutateDNA = 0.001
+    var mutateDNA = 0.005
     var mutateShape = 0.03
 }
+
+
+

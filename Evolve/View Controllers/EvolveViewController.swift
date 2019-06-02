@@ -24,7 +24,7 @@ class EvolveViewController: UIViewController, ModelDelegate {
     var image = UIImage(named: "mona")!
     var generator: Evolve?
     var running = true
-    let settings = Settings()
+    var settings = Settings()
     var allowImageUpdate = true
     var backupImage = UIImage()
     var timer = Timer()
@@ -57,9 +57,11 @@ class EvolveViewController: UIViewController, ModelDelegate {
         
         // Change button
         if running == true {
+            timer.invalidate()
             toggleButton.setImage(UIImage(named: "Play Button"), for: .normal)
             running = false
         } else {
+            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in self.codeToBeRun() })
             toggleButton.setImage(UIImage(named: "Pause Button"), for: .normal)
             running = true
         }
@@ -108,7 +110,6 @@ class EvolveViewController: UIViewController, ModelDelegate {
     }
     
     @IBAction func pausePressed(_ sender: Any) {
-        timer.invalidate()
         toggle()
     }
     
